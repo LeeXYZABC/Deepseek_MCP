@@ -2,6 +2,8 @@
 
 A Flask web application that integrates DeepSeek AI with terminal command execution capabilities and Model Context Protocol (MCP) endpoints.
 
+![Image](https://github.com/user-attachments/assets/08bcd194-35e8-4143-b4e2-cae22834b7ca)
+
 ## Features
 
 - **AI-Powered Terminal Assistance**: Chat interface where DeepSeek AI can execute shell commands when needed

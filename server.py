@@ -113,6 +113,14 @@ def call_deepseek_api(messages):
     return data["choices"][0]["message"]["content"]
 
 
+from ollama import chat as ochat
+from ollama import ChatResponse
+
+def call_deepseek_ollama(messages):
+    response: ChatResponse = ochat(model='qwen3:4b', messages=messages)
+    return response.message.content
+
+
 #######################################
 # Chat Endpoint
 #######################################
@@ -136,9 +144,10 @@ def chat():
     # 1) Add user message
     conversation.append({"role": "user", "content": user_text})
 
-    # 2) Call DeepSeek
+    # 2) Call llm
     try:
-        assistant_text = call_deepseek_api(conversation)
+        # assistant_text = call_deepseek_api(conversation)
+        assistant_text = call_deepseek_ollama(conversation)
     except Exception as e:
         err_msg = f"DeepSeek API error: {str(e)}"
         # We'll add an assistant message with the error

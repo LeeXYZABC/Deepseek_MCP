@@ -3,3 +3,4 @@ pexpect==4.8.0
 psutil==5.9.5
 python-dotenv==1.0.0 
 requests
+ollama
